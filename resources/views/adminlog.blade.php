@@ -14,9 +14,6 @@
             <div class="row">
                 <h1>ADMIN LOGIN</h1>
                 <br>
-                <div class="col-2">
-                    <img src="{{ asset('imgs/picki.png') }}" width="100%">
-                </div>
 
 
                 <div class="col-2">
