@@ -35,17 +35,18 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/add/message' , [MessageController::class, 'addMassage']);
 
     Route::get('/process/logout', [UserController::class, 'processLogout']);
+    
+    // admin, transact and View
+    Route::get('/viewmsg', [MessageController::class, 'index']);
+    
+    Route::get('/transact/{id}', [TransactionController::class, 'show']);
+    
+    Route::post('/transact/store/{id}', [TransactionController::class, 'store']);
+    Route::get('/adminlog', function(){
+        return view('adminlog');
+    });
 });
 
-// admin, transact and View
-Route::get('/viewmsg', [MessageController::class, 'index']);
-
-Route::get('/transact/{id}', [TransactionController::class, 'show']);
-
-Route::post('/transact/store/{id}', [TransactionController::class, 'store']);
-Route::get('/adminlog', function(){
-    return view('adminlog');
-});
 
 // main pages
 Route::get('/products', function(){
