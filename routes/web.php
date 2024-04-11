@@ -28,14 +28,14 @@ Route::post('/account/processLogin', [UserController::class, 'processLogin']);
 // });
 
 Route::group(['middleware'=>'auth'], function(){
-    Route::get('/costumer', function(){
+    Route::get('/customer', function(){
         return view('costumer');
     });
 
     Route::post('/add/message' , [MessageController::class, 'addMassage']);
 
     Route::get('/process/logout', [UserController::class, 'processLogout']);
-    
+
     // admin, transact and View
     Route::get('/viewmsg', [MessageController::class, 'index']);
     

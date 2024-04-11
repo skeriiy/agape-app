@@ -34,8 +34,8 @@ class UserController extends Controller
 
     public function processLogin(Request $request){
         $validated = $request->validate([
-            'email'=>['required', 'email'],
-            'password'=>['required']
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
 
         $user = User::leftJoin('roles', 'users.role_id', '=', 'roles.role_id')
@@ -48,11 +48,11 @@ class UserController extends Controller
             if($user->role == 'Admin') {
                 return redirect('/viewmsg');
             } else {
-                return redirect('/costumer');
+                return redirect('/customer');
             }
         }
         else {
-            return back()->with('message_failed', 'Incorect Email or Password.');
+            return back()->with('message_failed', 'Incorrect Email or Password.');
         }
     }
     public function processlogout(Request $request){
