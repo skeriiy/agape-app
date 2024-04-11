@@ -16,6 +16,8 @@
                     <img src="{{ asset('imgs/picki.png') }}" width="100%">
                 </div>
 
+                @include('include.message')
+
                 <div class="col-2">
                     <div class="form-container">
                         <div class="form-btn">
@@ -32,8 +34,7 @@
                             @error('password') <p style="color: red; font-size: 11px;">{{ $message }}</p> @enderror
                             <button type="submit" class="btn">Login</button>
                         </form>
-
-                        @include('include.message')
+                        
                         <form action="/account/store" method="post" id="RegForm">
                             @csrf
                             <input type="text" name="first_name" placeholder="Firstname">
