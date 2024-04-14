@@ -12,9 +12,6 @@
         <div class="container">
         @include('include.navbar')
             <div class="row">
-                <div class="col-2">
-                    <img src="{{ asset('imgs/picki.png') }}" width="100%">
-                </div>
 
                 @include('include.message')
 
@@ -34,7 +31,7 @@
                             @error('password') <p style="color: red; font-size: 11px;">{{ $message }}</p> @enderror
                             <button type="submit" class="btn">Login</button>
                         </form>
-                        
+
                         <form action="/account/store" method="post" id="RegForm">
                             @csrf
                             <input type="text" name="first_name" placeholder="Firstname">
@@ -49,7 +46,6 @@
                             @error('password') <p style="color: red; font-size: 11px;">{{ $message }}</p> @enderror
                             <button type="submit" class="btn">Register</button>
                         </form>
-
                     </div>
                 </div>
             </div>

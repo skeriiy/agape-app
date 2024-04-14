@@ -29,7 +29,7 @@ Route::post('/account/processLogin', [UserController::class, 'processLogin']);
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/customer', function(){
-        return view('costumer');
+        return view('customer');
     });
 
     Route::post('/add/message' , [MessageController::class, 'addMassage']);
@@ -38,9 +38,9 @@ Route::group(['middleware'=>'auth'], function(){
 
     // admin, transact and View
     Route::get('/viewmsg', [MessageController::class, 'index']);
-    
+
     Route::get('/transact/{id}', [TransactionController::class, 'show']);
-    
+
     Route::post('/transact/store/{id}', [TransactionController::class, 'store']);
     Route::get('/adminlog', function(){
         return view('adminlog');

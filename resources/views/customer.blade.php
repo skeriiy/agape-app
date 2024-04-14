@@ -15,10 +15,10 @@
             <div class="col-2">
                 <div class="form-container">
                     <div class="form-btn">
-                        <span> Welcome! User!</span>
+                        <span>Order_here↓</span>
                     </div>
                     <div class="msgs">
-                        <form action="/add/message" method="post" class="costumer">
+                        <form action="/add/message" method="post" class="customer">
                             @include('include.message')
                             @csrf
                             <textarea name="message" id="" cols="30" rows="10"></textarea>
@@ -98,7 +98,7 @@
         <div class="col-2">
             <center><h1> To Order </h1>
             <h3> Click the order button below ↓ to Direct Message ↓ your Desired ordered product.</h3>
-            <a href="/costumer" class="btn"> Order Now  </a>
+            <a href="/customer" class="btn"> Order Now  </a>
             <h3> For Questions or Verification, Please Contact as by →<a href="/contact"><u>Clicking Here</u></a>←  </h3>
         </center>
         <br><br><br>
